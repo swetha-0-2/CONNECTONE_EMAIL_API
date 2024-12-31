@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-12-31T15:42:58.307897" rpa="false" schemaversion="5">
+<suite id="s1" name="Email Api" source="C:\Users\SwethaV\Desktop\CONNECTONE_EMAIL_API\email_api.robot">
+<test id="s1-t1" name="TC_001 - nw  verify when authkey is not provided and authmode is set to 1. The request should pass successfully." line="8">
+<kw name="Execute APIs">
+<kw name="Execute Api" owner="email_api">
+<msg time="2024-12-31T15:43:35.915986" level="INFO">Sent POST request to http://10.20.51.52/ConnectoneUrl/SendEmail/SendEmail? with response status: 200
+Fetched messageId: 0342590934
+Expected response after adding messageId: {'requestStatus': 'success', 'statusCode': 200, 'statusDesc': 'Request accepted successfully', 'messageId': '0342590934', 'custRef': '123'}
+Waiting for attempt log to update before checking messageId...
+Database connection established.
+Checked for messageId 0342590934 in email_attempt_log: Found
+messageId 0342590934 found in database.
+Fetched mid for messageId 0342590934: 3167311543007708501
+Using mid 3167311543007708501 to send mid URL.
+Validating MID: 3167311543007708501
+Hitting MID URL: http://10.20.51.52/ConnectOneUrl/edlr/edlr?msgid=3167311543007708501&amp;from=alerts@page247.net&amp;to=swetha.v@karix.com&amp;stime=2024-12-24 11:40:38&amp;dtime=2024-12-24 11:40:39&amp;status=001&amp;reason=delivered&amp;provider=karixEmail&amp;err=0
+Sending request to MID URL: http://10.20.51.52/ConnectOneUrl/edlr/edlr?msgid=3167311543007708501&amp;from=alerts@page247.net&amp;to=swetha.v@karix.com&amp;stime=2024-12-24 11:40:38&amp;dtime=2024-12-24 11:40:39&amp;status=001&amp;reason=delivered&amp;provider=karixEmail&amp;err=0
+Successfully received response for MID 3167311543007708501: 3167311543007708501
+Waiting for the DLR log to be updated...
+Executing query: SELECT * FROM email_dlr_log WHERE mid = %s with MID = 3167311543007708501
+MID 3167311543007708501 found in email_dlr_log.
+Valid MID found. MID 3167311543007708501 validation successful.</msg>
+<msg time="2024-12-31T15:43:35.916386" level="INFO">${result} = Pass</msg>
+<var>${result}</var>
+<arg>${test_case_id}</arg>
+<arg>${test_desc}</arg>
+<arg>${url}</arg>
+<arg>${payload}</arg>
+<arg>${expected_response}</arg>
+<status status="PASS" start="2024-12-31T15:43:00.028822" elapsed="35.887636"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${result}' == 'Fail'</arg>
+<arg>Fail</arg>
+<arg>Test case failed for ${test_case_id} - ${test_desc}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-31T15:43:35.916866" elapsed="0.001499"/>
+</kw>
+<arg>test_case_id=TC_001</arg>
+<arg>test_desc=nw  verify when authkey is not provided and authmode is set to 1. The request should pass successfully.</arg>
+<arg>url=http://10.20.51.52/ConnectoneUrl/SendEmail/SendEmail?</arg>
+<arg>payload={
+    "version": "1.0",
+    "authmode": "1",
+    "authkey": "",
+    "userName": "Email1",
+    "password": "Test@123",
+    "includeFooter": "yes",
+    "encryption": "0",
+    "attachmenttype": "1",
+    "Dlr": "1",
+    "message": {
+        "CustRefID": "123",
+        "ContentType": "1",
+        "subject": "23rd August Test1",
+        "fromEmail": "alerts@page247.net",
+        "fromName": "Raji2",
+        "replyTo": "alerts@page247.net",
+        "body": "&lt;p&gt;To test the email power api, message 1&lt;/p&gt;",
+        "recipients": [
+            "swetha.v@karix.com"
+        ],
+        "ccRecipients": [
+        ],
+        "bccRecipients": [
+            
+        ],
+        "mtag": {
+            "Param1": "bankvvv",
+            "Param2": "crcard",
+            "Param3": "entertainment",
+            "Param4": "travel",
+            "Param5": "movie"
+        },
+         "template": {
+            "templateId": "1",
+            "templateValues": {
+                "Name": "Bob Mill",
+                "AccNo": "10220001",
+                "StartDate": "01/02/2016",
+                "EndDate": "01/03/2018",
+                "BANK": "DFCI Bank Ltd."
+            }
+        },
+        "attachments": {
+            "attachmentpath": "",
+            "attachmentDetails": [
+                {
+                    "name":"test4.txt",
+                    "attachmentData":""
+                }
+
+            ]
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</arg>
+<arg>expected_response={
+    "requestStatus": "success",
+    "statusCode": 200,
+    "statusDesc": "Request accepted successfully",
+    "messageId": "",
+    "custRef": "123"
+}</arg>
+<status status="PASS" start="2024-12-31T15:43:00.028219" elapsed="35.890426"/>
+</kw>
+<status status="PASS" start="2024-12-31T15:43:00.026471" elapsed="35.892926"/>
+</test>
+<test id="s1-t2" name="TC_002 - Verify when authkey is provided and authmode is set to 1." line="8">
+<kw name="Execute APIs">
+<kw name="Execute Api" owner="email_api">
+<msg time="2024-12-31T15:43:37.904927" level="INFO">Sent POST request to http://10.20.51.52/ConnectoneUrl/SendEmail/SendEmail? with response status: 200
+Fetched messageId: 0343340935
+Expected response after adding messageId: {'requestStatus': 'success', 'statusCode': 200, 'statusDesc': 'Request accepted successfully', 'messageId': '0343340935', 'custRef': '123'}
+Error during test case execution: Execution terminated by signal</msg>
+<msg time="2024-12-31T15:43:37.905254" level="INFO">${result} = Fail</msg>
+<var>${result}</var>
+<arg>${test_case_id}</arg>
+<arg>${test_desc}</arg>
+<arg>${url}</arg>
+<arg>${payload}</arg>
+<arg>${expected_response}</arg>
+<status status="PASS" start="2024-12-31T15:43:35.923470" elapsed="1.981856"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${result}' == 'Fail'</arg>
+<arg>Fail</arg>
+<arg>Test case failed for ${test_case_id} - ${test_desc}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2024-12-31T15:43:37.905632" elapsed="0.000271">Execution terminated by signal</status>
+</kw>
+<arg>test_case_id=TC_002</arg>
+<arg>test_desc=Verify when authkey is provided and authmode is set to 1.</arg>
+<arg>url=http://10.20.51.52/ConnectoneUrl/SendEmail/SendEmail?</arg>
+<arg>payload={
+    "version": "1.0",
+    "authmode": "1",
+    "authkey": "GXkJg6kUvvuUkebVmzzRVRF0WyJRKfYN9HooICt4xJmgwF7BWO/3OR7KDLHdX6kJ",
+    "userName": "Email1",
+    "password": "Test@123",
+    "includeFooter": "yes",
+    "encryption": "0",
+    "attachmenttype": "1",
+    "Dlr": "1",
+    "message": {
+        "CustRefID": "123",
+        "ContentType": "1",
+        "subject": "23rd August Test1",
+        "fromEmail": "alerts@page247.net",
+        "fromName": "Raji2",
+        "replyTo": "alerts@page247.net",
+        "body": "&lt;p&gt;To test the email power api, message 1&lt;/p&gt;",
+        "recipients": [
+            "swetha.v@karix.com"
+        ],
+        "ccRecipients": [
+        ],
+        "bccRecipients": [
+            
+        ],
+        "mtag": {
+            "Param1": "bankvvv",
+            "Param2": "crcard",
+            "Param3": "entertainment",
+            "Param4": "travel",
+            "Param5": "movie"
+        },
+         "template": {
+            "templateId": "1",
+            "templateValues": {
+                "Name": "Bob Mill",
+                "AccNo": "10220001",
+                "StartDate": "01/02/2016",
+                "EndDate": "01/03/2018",
+                "BANK": "DFCI Bank Ltd."
+            }
+        },
+        "attachments": {
+            "attachmentpath": "",
+            "attachmentDetails": [
+                {
+                    "name":"test1.pdf",
+                    "attachmentData":""
+                },
+                {
+                    "name":"test4.txt",
+                    "attachmentData":""
+                }
+
+            ]
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</arg>
+<arg>expected_response={
+    "requestStatus": "success",
+    "statusCode": 200,
+    "statusDesc": "Request accepted successfully",
+    "messageId": "",
+    "custRef": "123"
+}</arg>
+<status status="FAIL" start="2024-12-31T15:43:35.922924" elapsed="1.983209">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2024-12-31T15:43:35.920850" elapsed="1.986052">Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="TC_003 - Verify when attachments are included and authmode is set to 1." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.908428" elapsed="0.002498">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="TC_004 - Verify when attachments are not included and authmode is set to 1." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.912886" elapsed="0.002582">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="TC_005 - Verify when templates are included and authmode is set to 1." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.917551" elapsed="0.002239">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="TC_006 - Verify when templates are not included and authmode is set to 1." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.923225" elapsed="0.002347">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="TC_007 - Verify when authmode is set to 1 and the replyTo email is not provided." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.927541" elapsed="0.002474">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="TC_008 - Verify when authmode is set to 1 and the recipient is not provided. The request should pass successfully." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.931421" elapsed="0.001767">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="TC_009 - Verify when authmode is set to 1, the recipient is provided, and a CC email is included. The request should pass successfully." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.936548" elapsed="0.003074">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="TC_010 - Verify when authmode is set to 1, the recipient is provided, and CC and BCC emails are excluded. The request should pass successfully." line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.942021" elapsed="0.001910">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="TC_011 - authmode - 1  pdf file with 1.5 mb" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.946027" elapsed="0.001734">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="TC_012 - authmode - 1 pdf file with 1 mb" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.949533" elapsed="0.001665">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t13" name="TC_013 - authmode - 1   pdf file with 500 kb" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.952997" elapsed="0.001697">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t14" name="TC_014 - authmode - 1 with multiple attachments with max size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.957016" elapsed="0.001883">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t15" name="TC_015 - authmode - 1 with multiple attachments with max size for mw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.960820" elapsed="0.001893">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t16" name="TC_016 - authmode - 1 with multiple attachment within the max size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.964821" elapsed="0.001773">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t17" name="TC_017 - authmode - 1 with multiple attachments within the max size for mw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.968646" elapsed="0.002228">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t18" name="TC_018 - authmode - 2 with multiple attachments within max size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.972742" elapsed="0.001760">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t19" name="TC_019 - authmode - 2 with multiple attachments within max size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.976443" elapsed="0.001678">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t20" name="TC_020 - authmode - 1 with image file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.979577" elapsed="0.001521">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t21" name="TC_021 - authmode - 1 with multiple image files" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.982395" elapsed="0.001301">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t22" name="TC_022 - authmode - 1 with gif file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.985253" elapsed="0.001792">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t23" name="TC_023 - authmode - 1 regional language" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.988964" elapsed="0.001433">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t24" name="TC_024 - authmode - 1 with multiple attachments with pdf file, image file, gif file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.992466" elapsed="0.001181">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t25" name="TC_025 - invalid username" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.995356" elapsed="0.001013">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t26" name="TC_026 - invalid password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:37.998058" elapsed="0.001072">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t27" name="TC_027 - both invalid username and password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.001031" elapsed="0.001711">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t28" name="TC_028 - invalid authkey " line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.004288" elapsed="0.001388">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t29" name="TC_029 - mw url authmode - 1 without authkey" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.008694" elapsed="0.001208">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t30" name="TC_030 - authmode - 1 with authkey" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.011571" elapsed="0.001082">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t31" name="TC_031 - authmode - 1 with attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.014327" elapsed="0.001337">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t32" name="TC_032 - authmode - 1 without attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.017778" elapsed="0.002064">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t33" name="TC_033 - authmode - 1 with templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.021628" elapsed="0.002541">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t34" name="TC_034 - authmode - 1 without templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.026479" elapsed="0.001799">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t35" name="TC_035 - authmode - 1 without replyTo email" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.029831" elapsed="0.001693">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t36" name="TC_036 - authmode - 1 without recepient" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.033348" elapsed="0.001373">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t37" name="TC_037 - authmode - 1 with receipent and cc" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.036860" elapsed="0.001320">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t38" name="TC_038 - authmode - 1 with receipent and without cc and bcc" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.039287" elapsed="0.001407">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t39" name="TC_039 - authmode - 1 with pdf file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.042023" elapsed="0.001753">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t40" name="TC_040 - authmode - 1 with image file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.045629" elapsed="0.001111">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t41" name="TC_041 - authmode - 1 with gif file" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.048697" elapsed="0.001271">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t42" name="TC_042 - authmode - 1 with multiple attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.051945" elapsed="0.001659">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t43" name="TC_043 - invalid username" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.054511" elapsed="0.002271">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t44" name="TC_044 - invalid password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.058230" elapsed="0.000909">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t45" name="TC_045 - both invalid username and password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.060475" elapsed="0.001637">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t46" name="TC_046 - invalid url with extra parameters" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.063215" elapsed="0.000857">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t47" name="TC_047 - invalid ip" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.064962" elapsed="0.001102">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t48" name="TC_048 - authmode - 1 regional language" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.067182" elapsed="0.001731">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t49" name="TC_049 - invalid authkey " line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.069894" elapsed="0.001618">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t50" name="TC_050 - mw authmode - 2 with auth key " line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.072614" elapsed="0.001178">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t51" name="TC_051 - authmode - 2 without auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.074663" elapsed="0.001160">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t52" name="TC_052 - authmode - 2 with invalid auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.076700" elapsed="0.001178">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t53" name="TC_053 - authmode - 2 with attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.078877" elapsed="0.001186">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t54" name="TC_054 - authmode - 2 without attachements" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.081655" elapsed="0.001356">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t55" name="TC_055 - authmode - 2 with templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.084227" elapsed="0.002344">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t56" name="TC_056 - authmode - 2 without templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.088110" elapsed="0.001417">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t57" name="TC_057 - authmode - 2 without replyTo mail id" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.090798" elapsed="0.001495">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t58" name="TC_058 - authmode - 2 with pdf file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.094043" elapsed="0.001194">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t59" name="TC_059 - authmode - 2 with image file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.096717" elapsed="0.001475">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t60" name="TC_060 - authmode - 2 with gif file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.099455" elapsed="0.001911">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t61" name="TC_061 - authmode - 2 with multiple attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.103557" elapsed="0.001474">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t62" name="TC_062 - auhmode - 2 with max file size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.106340" elapsed="0.001545">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t63" name="TC_063 - authmode - 2 with invalid username" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.109042" elapsed="0.001265">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t64" name="TC_064 - authmode - 2 with invalid password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.112037" elapsed="0.001411">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t65" name="TC_065 - both invalid username and password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.114829" elapsed="0.001616">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t66" name="TC_066 - invalid url" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.119203" elapsed="0.002451">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t67" name="TC_067 - authmode - 2 regional language" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.123952" elapsed="0.001699">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t68" name="TC_068 - invalid ip" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.127182" elapsed="0.001751">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t69" name="TC_069 - nw authmode - 2 with auth key " line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.130448" elapsed="0.001105">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t70" name="TC_070 - authmode - 2 without auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.133164" elapsed="0.001585">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t71" name="TC_071 - authmode - 2 with invalid auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.136775" elapsed="0.001733">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t72" name="TC_072 - authmode - 2 with attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.140072" elapsed="0.001174">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t73" name="TC_073 - authmode - 2 without attachements" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.143010" elapsed="0.001499">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t74" name="TC_074 - authmode - 2 with templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.146030" elapsed="0.001463">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t75" name="TC_075 - authmode - 2 without templates" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.149250" elapsed="0.002353">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t76" name="TC_076 - authmode - 2 without replyTo mail id" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.153544" elapsed="0.001672">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t77" name="TC_077 - authmode - 2 with pdf file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.157086" elapsed="0.001338">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t78" name="TC_078 - authmode - 2 with image file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.159929" elapsed="0.001394">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t79" name="TC_079 - authmode - 2 with gif file as attachment" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.162808" elapsed="0.001488">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t80" name="TC_080 - authmode - 2 with multiple attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.165698" elapsed="0.001304">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t81" name="TC_081 - auhmode - 2 with max file size" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.168668" elapsed="0.001346">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t82" name="TC_082 - authmode - 2 with invalid username" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.171516" elapsed="0.001159">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t83" name="TC_083 - authmode - 2 with invalid password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.174214" elapsed="0.001492">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t84" name="TC_086 - both invalid username and password" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.177308" elapsed="0.001419">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t85" name="TC_085 - invalid url" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.180164" elapsed="0.001288">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t86" name="TC_086 - invalid ip" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.183066" elapsed="0.001489">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t87" name="TC_087 - regional language without auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.185902" elapsed="0.001370">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t88" name="TC_088 - regional language with auth key" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.188767" elapsed="0.001531">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t89" name="TC_089 - attaching min size files as the attachments" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.191858" elapsed="0.001312">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t90" name="TC_090 - auth mode 1 - with empty attachment data" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.194685" elapsed="0.001400">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t91" name="TC_091 - auth mode - 1 with empty attachment data" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.197464" elapsed="0.001465">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t92" name="TC_092 - auth mode - 2 with empty attachment data" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.200560" elapsed="0.002088">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t93" name="TC_093 - auth mode - 2 with empty attachmen data" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.204531" elapsed="0.001480">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t94" name="TC_094 - valid receipient id and invalid cc for nw for auth mode -1" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.207735" elapsed="0.001554">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t95" name="TC_095 - invalid receipient id and invalid cc for nw for auth mode - 1" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.210656" elapsed="0.001522">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t96" name="TC_096 - valid receipient id and invalid cc for mw for auth mode -1" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.213884" elapsed="0.001486">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t97" name="TC_097 - invalid receipient id and invalid cc for mw for auth mode - 1" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.217498" elapsed="0.002353">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t98" name="TC_098 - valid receipient id and invalid cc for nw for auth mode -2" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.221526" elapsed="0.001523">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t99" name="TC_099 - invalid receipient id and invalid cc for nw for auth mode - 2" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.224551" elapsed="0.001204">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t100" name="TC_100 - valid receipient id and invalid cc for mw for auth mode -2" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.227091" elapsed="0.002029">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t101" name="TC_101 - invalid receipient id and invalid cc for mw for auth mode - 2" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.230564" elapsed="0.001402">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t102" name="TC_102 - auth mode - 1  attaching more than 5 files in the attachments  for nw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.233163" elapsed="0.000990">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t103" name="TC_103 - auth mode - 1  attaching more than 5 files in the attachments  for mw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.235733" elapsed="0.001616">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t104" name="TC_104 - auth mode - 2  attaching more than 5 files in the attachments  for nw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.239029" elapsed="0.001146">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t105" name="TC_105 - auth mode - 2  attaching more than 5 files in the attachments  for mw" line="8">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-31T15:43:38.241820" elapsed="0.001349">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2024-12-31T15:42:58.309757" elapsed="39.934980"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="104" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="1" fail="104" skip="0" id="s1" name="Email Api">Email Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
